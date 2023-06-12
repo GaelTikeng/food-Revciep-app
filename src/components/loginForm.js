@@ -51,7 +51,7 @@ export default function LoginForm () {
     console.log(userName);
     console.log(passWord);
 
-    if (userName === userInfo.email) {
+    if (userName === userInfo.email && passWord === userInfo.password) {
       setIsSubmitted(true);
       setTimeout(() => {
         navigate('/loginForm/accountPage');

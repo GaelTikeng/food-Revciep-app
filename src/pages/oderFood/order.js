@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
@@ -8,6 +8,7 @@ import StripeCheckout from 'react-stripe-checkout';
 
 
 const MyTextInput = ({ label, ...props }) => {
+  
   const [field, meta] = useField(props);
   return (
     <>
@@ -24,6 +25,7 @@ export default function OrderFood () {
   const { register, handleSubmit } = useForm();
   const {id} = useParams();
   const [open, setOpen] = useState(false);
+  const payment = useRef();
 
   const togglePopup = () => {
     setOpen(!open);
@@ -82,9 +84,9 @@ export default function OrderFood () {
           })}
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
               setSubmitting(false);
               localStorage.setItem('clientInfo', JSON.stringify(values));
+              payment.current.onClick();
               
             }, 400);
           }}
@@ -122,14 +124,18 @@ export default function OrderFood () {
               placeholder="jane@formik.com"
             />
             <button type="submit" className='mt-4 bg-green-300 rounded-md'>Submit</button>
-            <StripeCheckout
-              token={onToken}
-              name="Food purchase"
-              description = 'From Astride food'
-              currency='USD'
-              amount= {foodBought.price}
-              stripeKey="pk_test_51NEVlaHX2T5xVKLdpinmsabv8k62puQRRRbR939aDHuGi1WpFP5pxg1uJfdDp5THxnvv350Zqpst7CrD1iy5ngUy00S0c8zI9K"
-            />
+            <div className='hidden'>
+              <StripeCheckout
+                token={onToken}
+                ref={payment}
+                name="Food purchase"
+                description = 'From Astride food'
+                currency='USD'
+                amount= {foodBought.price}
+                stripeKey="pk_test_51NEVlaHX2T5xVKLdpinmsabv8k62puQRRRbR939aDHuGi1WpFP5pxg1uJfdDp5THxnvv350Zqpst7CrD1iy5ngUy00S0c8zI9K"
+              />
+            </div>
+            
           </Form>
         </Formik>
         

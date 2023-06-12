@@ -18,9 +18,11 @@ export default function Account () {
     name: "",
     price: "",
     description: "",
-    image: ""
+    image: "",
+    id: 0
   });
-  
+
+
   const myUser = JSON.parse(localStorage.getItem('userInfo'));
 
   // const handleChange = (e) => {
@@ -88,9 +90,9 @@ export default function Account () {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = JSON.parse(localStorage.getItem("foodItems")) || [];
+    const data = JSON.parse(localStorage.getItem("foodItem")) || [];
     localStorage.setItem(
-      "foodItems",
+      "foodItem",
       JSON.stringify([...data, productData])
     );
     alert("Food successfully added");
@@ -112,7 +114,7 @@ export default function Account () {
           className='bg-green-300 right-20 mr-5'
           onClick={()=> setShowAddForm((prev) => !prev)}
         >
-          Add Product
+          Add new meal
         </button>
       </div>
       {showAddForm && (     
@@ -189,11 +191,10 @@ export default function Account () {
                     <button className="bg-red-500 px-5 rounded-lg">Order</button>
                     <button className="bg-red-500 px-6 py-2 rounded-lg"
                     onClick={() => handleDelete(foodItem.name)}
-                    >Add new meal</button>
+                    >Delete</button>
                   </div>
                 </div>
               </div>
-              
             );
           })}
         </div>
