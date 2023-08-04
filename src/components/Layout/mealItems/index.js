@@ -2,13 +2,12 @@ import React, { useContext } from "react";
 import PropTypes from 'prop-types';
 import getImage from "../../../utils/getImage";
 import { useNavigate } from "react-router-dom";
-import { FoodContext } from "../../../utils/context";
-import { useFooditerms } from "../../../utils/context";
+// import { FoodContext } from "../../../utils/context";
 
 
 export default function MealItem (props) {
   const navigate = useNavigate();
-  const {value} = useContext(FoodContext);
+  // const {value} = useContext(FoodContext);
   const handleClick = () => {
     navigate(`./item-description/${props.id}`);
   }

@@ -61,15 +61,15 @@ export default function LoginForm () {
     
   }
 
-  const handleAccount = () => {
-    navigate ('../accountPage')
+  // const handleAccount = () => {
+  //   navigate ('../accountPage')
     // if (userName === userInfo.email && passWord === userInfo.passWord) {
     //   navigate('../accountPage');
     // } else <div>wrong email or password</div>
-  }
+  // }
 
   return (
-    <div style={loginStyle}className='bg-gray-300'>
+    <div style={loginStyle} className='bg-gray-300'>
       <form >
         <h1 className='py-1 text-center'><b>Login to account</b></h1>
         <hr style={{width: "90%", margin: "10px auto"}}></hr>

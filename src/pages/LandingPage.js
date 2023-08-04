@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import MealItem from '../components/Layout/mealItems';
-import { FoodContext } from '../utils/context';
+// import { FoodContext } from '../utils/context';
 
 // import Header from './components/Layout/Header';
 
@@ -74,7 +74,7 @@ export const meals = [
 localStorage.setItem('foodItems', JSON.stringify([...meals]))
 
 export default function LandingPage () {
-  const {value} = useContext(FoodContext);
+  // const {value} = useContext(FoodContext);
   const [addedFood, setAddedFood] = useState([]);
   const [food, setFood] = useState([]);
 
@@ -88,7 +88,6 @@ export default function LandingPage () {
     <MealItem
       key={meal.id}
       image={meal.image}
-      selectItem={(id) => {}}
       id={meal.id}
       name={meal.name}
       price={meal.price}

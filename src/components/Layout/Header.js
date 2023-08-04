@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import SignupForm from '../../pages/signup';
 import Popup from '../../components/popup/popup';
 
 export default function Header () {

@@ -1,6 +1,6 @@
 import './App.css';
-import React, { Component, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Layout/Header';
 import LandingPage from './pages/LandingPage';
 import ItemDetails from './pages/item-description/itemDescription';
@@ -8,7 +8,7 @@ import OrderFood from './pages/oderFood/order';
 import SignupForm from './pages/signup';
 import LoginForm from './components/loginForm';
 import Account from './pages/accountPage/accountPage';
-import { ContextProvider, FoodProvider } from './utils/context';
+import { FoodProvider } from './utils/context';
 import { useLocalStorage } from './utils/useLocalStorage';
 // import CustomizedDialogs from './components/dialogue';
 

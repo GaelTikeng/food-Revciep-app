@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import { useParams } from "react-router-dom";
 import getImage from "../../utils/getImage";
-import Popup from "../../components/popup/popup";
 import { useNavigate } from "react-router-dom";
 import { useFooditerms } from "../../utils/context";
+import './itemDescription.css';
 
 
 export default function ItemDetails () {
@@ -31,8 +31,8 @@ export default function ItemDetails () {
 
   const foodDesc = localFood.find((food) => food.id == id);
   return (
-    <div style={pageStyle}>
-      <div style={myStyle} className="shadow-2xl p-2">
+    <div className="page-style">
+      <div className="my-style">
         <img
           src={getImage(foodDesc.image)}
           alt={foodDesc.name}

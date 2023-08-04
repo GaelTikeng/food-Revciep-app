@@ -1,10 +1,7 @@
 import React, { useContext, useState } from 'react'
-import LandingPage from '../LandingPage';
-import { Slide as Menu } from 'react-burger-menu';
 import SideMenu from '../../components/sideMenu/sideMenu';
-import { useFooditerms } from '../../utils/context';
-import { useLocalStorage } from '../../utils/useLocalStorage';
 import { FoodContext } from '../../utils/context';
+
 
 
 
@@ -23,7 +20,7 @@ export default function Account () {
   });
 
 
-  const myUser = JSON.parse(localStorage.getItem('userInfo'));
+  // const myUser = JSON.parse(localStorage.getItem('userInfo'));
 
   // const handleChange = (e) => {
   //   const { name, value } = e.target;
