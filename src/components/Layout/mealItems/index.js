@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from 'prop-types';
 import getImage from "../../../utils/getImage";
 import { useNavigate } from "react-router-dom";
+import './mealItems.css';
 // import { FoodContext } from "../../../utils/context";
 
 
@@ -12,7 +13,7 @@ export default function MealItem (props) {
     navigate(`./item-description/${props.id}`);
   }
   return (
-    <div className="cursor-pointer bg-gray-300 shadow-lg transform" onClick={handleClick} style={{borderRadius: "10px", width: "300px", padding:"10px"}}>
+    <div className="meal-div" onClick={handleClick}>
       <img
         className="h-52 w-72"
         src={getImage(props.image)}

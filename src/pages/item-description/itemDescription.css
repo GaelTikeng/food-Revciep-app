@@ -1,7 +1,6 @@
 .my-style {
-  width: 35%;
+  width: 450px;
   margin: 0 auto;
-  /* height: 500px; */
   background-color: #4e4e4ae0;
   box-shadow: 2px 5px 8px #000;
   border-radius: 8px;
@@ -18,13 +17,44 @@
 
 img {
   width: 100%;
+  height: 400px;
+}
+
+.conten {
+  display: flex;
+}
+
+.food-name {
+  flex: 1;
+  font-size: 25px;
+  padding-top: 1rem;
+  color: #fff;
+}
+
+.description {
+  color: #fff;
+  padding: 8px 0;
+  font-size: 20px;
+}
+
+.price {
+  color: #ff0000;
+  font-size: 30px;
+  padding-top: 1rem;
+}
+
+.order-botton {
+  background-color: #ff0000;
+  border-radius: 8px;
+  color: #fff;
+  padding: 8px 20px;
 }
 
 @media screen and (max-width: 600px) {
   .my-style {
     width: 96vw;
     margin: 0 auto;
-    margin-top: 110px !important;
+    margin-top: 80px !important;
   }
 }
 

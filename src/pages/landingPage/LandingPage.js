@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import MealItem from '../components/Layout/mealItems';
+import MealItem from '../../components/Layout/mealItems';
+import './landingPage.css';
 // import { FoodContext } from '../utils/context';
 
 // import Header from './components/Layout/Header';
@@ -105,8 +106,8 @@ export default function LandingPage () {
   ))
 
   return (
-    <div>
-      <div className='shadow-2xl' style={{display: "flex", flexWrap: "wrap", gap:"1rem", margin: "10px", marginTop:"90px", width:"98%", justifyContent:"space-around", padding:"20px 0"}} >
+    <div className='cover'>
+      <div className='food'>
         {mealList}
       </div>
       

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useParams } from "react-router-dom";
 import getImage from "../../utils/getImage";
 import { useNavigate } from "react-router-dom";
-import { useFooditerms } from "../../utils/context";
+// import { useFooditerms } from "../../utils/context";
 import './itemDescription.css';
 
 
@@ -15,17 +15,6 @@ export default function ItemDetails () {
   const handleOrder = () => {
     navigate(`/${id}/orderFood`)
   }
-  
-  const myStyle = {
-    width:"500px",
-    margin:"10px auto",
-    border:"2px solid black", borderRadius:"10px",
-    backgroundColor:"#4e4a4ae0"
-  }
-  const pageStyle = {
-    backgroundSize: "cover",
-    backgroundImage: "url('https://c8.alamy.com/compfr/2ke83x1/cuisine-authentique-du-cameroun-assiette-avec-drapeau-camerounais-et-coutellerie-2ke83x1.jpg')"
-  }
 
   const localFood = JSON.parse(localStorage.getItem('foodItems'))
 
@@ -37,13 +26,13 @@ export default function ItemDetails () {
           src={getImage(foodDesc.image)}
           alt={foodDesc.name}
         />
-        <div className="flex">
-          <h1 className="text-3xl flex-1 pt-4 text-white"><b>{foodDesc.name}</b></h1>
-          <p className="text-4xl text-red-600 pt-4"> {foodDesc.price} </p>
+        <div className="conten">
+          <h1 className="food-name"><b>{foodDesc.name}</b></h1>
+          <p className="price"> {foodDesc.price} </p>
         </div>
         
-        <p className="text-white text-xl py-4"> {foodDesc.description} </p>
-        <button onClick={handleOrder} className="bg-red-500 px-6 py-2 rounded-lg text-white">Buy</button>
+        <p className="description"> {foodDesc.description} </p>
+        <button onClick={handleOrder} className="order-botton">Buy</button>
       </div>
       
     </div>

@@ -1,10 +1,10 @@
 import React, {useState, useRef} from 'react';
 import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
-import { useForm } from 'react-hook-form';
 import getImage from '../../utils/getImage';
 import { useParams } from "react-router-dom";
 import StripeCheckout from 'react-stripe-checkout';
+import './orderFood.css';
 
 
 const MyTextInput = ({ label, ...props }) => {
@@ -22,22 +22,18 @@ const MyTextInput = ({ label, ...props }) => {
 };
 
 export default function OrderFood () {
-  const { register, handleSubmit } = useForm();
   const {id} = useParams();
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const payment = useRef();
 
-  const togglePopup = () => {
-    setOpen(!open);
-  }
+  // const togglePopup = () => {
+  //   setOpen(!open);
+  // }
 
   const onToken = (token) => {
     console.log(token);
   }
 
-  // const handleDeliver = () => {
-    
-  // }
   const localFood = JSON.parse(localStorage.getItem('foodItems'))
   const foodBought = localFood.find((dish) => dish.id == id);
 
@@ -45,7 +41,8 @@ export default function OrderFood () {
     border: "1px solid #000",
     padding: "10px",
     border: "none",
-    borderRadius: "10px"
+    borderRadius: "10px",
+    backgroundColor: "#c9c3c5"
   }
   const backgroundStyle = {
     marginTop: "50px",
@@ -58,7 +55,7 @@ export default function OrderFood () {
   return (
     <div style={backgroundStyle}>
       
-      <div style={{width: "50%"}}>
+      <div className='form'>
         <h1 className='text-3xl text-center mt-8' >Delivery form</h1>
         <p className='text-center italic m-2'>Please enter your informations</p>
         <Formik
@@ -141,8 +138,7 @@ export default function OrderFood () {
         
       </div>
       <img
-        style={{width:"300px", height:"50vh", 
-        alignContent: "first baseline", paddingTop: "50px", marginTop: "55px"}}
+        className='image-of-food'
         src = {getImage(foodBought.image)} alt='command picture'
       />
       

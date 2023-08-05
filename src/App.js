@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Layout/Header';
-import LandingPage from './pages/LandingPage';
+import LandingPage from './pages/landingPage/LandingPage';
 import ItemDetails from './pages/item-description/itemDescription';
 import OrderFood from './pages/oderFood/order';
 import SignupForm from './pages/signup';
