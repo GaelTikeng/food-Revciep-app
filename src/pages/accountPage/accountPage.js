@@ -1,15 +1,12 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import SideMenu from '../../components/sideMenu/sideMenu';
-import { FoodContext } from '../../utils/context';
 import './accountPage.css';
 
 
 
 export default function Account () {
-  const { value, setValue } = useContext(FoodContext);
 
   const [localData, setLocalData] = useState(JSON.parse(localStorage.getItem("foodItems")));
-  const [element, setElement] = useState(JSON.parse(localStorage.getItem("foodItem")));
   const [showAddForm, setShowAddForm] = useState(false);
   const [productData, setProductData] = useState({
     name: "",
@@ -92,7 +89,7 @@ export default function Account () {
   
 
   return (
-    <div>
+    <div className='all'>
       <SideMenu pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
 
       <div className='pt-20 flex justify-between left-20'>

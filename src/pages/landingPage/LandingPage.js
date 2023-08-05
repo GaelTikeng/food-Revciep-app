@@ -96,7 +96,7 @@ export default function LandingPage () {
     />
   ));
 
-  const addedMeal = Object.entries(food).map((eat) => (
+  Object.entries(food).map((eat) => (
     <MealItem
       key = {eat.name}
       name = {eat.name}

@@ -14,12 +14,12 @@ export default function SideMenu () {
       <a className="menu-item" href="/">
         Home
       </a>
-      <a className="menu-item" href="#">
+      <p className="menu-item">
         About
-      </a>
-      <a className="menu-item" href="#">
+      </p>
+      <p className="menu-item">
         Services
-      </a>
+      </p>
       <a className='bottom-10' href="/">
         Log out
       </a>

@@ -35,12 +35,10 @@ export default function OrderFood () {
   }
 
   const localFood = JSON.parse(localStorage.getItem('foodItems'))
-  const foodBought = localFood.find((dish) => dish.id == id);
+  const foodBought = localFood.find((dish) => dish.id === id);
 
   const mystyle = {
-    border: "1px solid #000",
     padding: "10px",
-    border: "none",
     borderRadius: "10px",
     backgroundColor: "#c9c3c5"
   }
@@ -139,7 +137,7 @@ export default function OrderFood () {
       </div>
       <img
         className='image-of-food'
-        src = {getImage(foodBought.image)} alt='command picture'
+        src = {getImage(foodBought.image)} alt='command'
       />
       
       

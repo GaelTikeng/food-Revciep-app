@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import getImage from "../../utils/getImage";
 import { useNavigate } from "react-router-dom";
@@ -18,7 +18,7 @@ export default function ItemDetails () {
 
   const localFood = JSON.parse(localStorage.getItem('foodItems'))
 
-  const foodDesc = localFood.find((food) => food.id == id);
+  const foodDesc = localFood.find((food) => food.id === id);
   return (
     <div className="page-style">
       <div className="my-style">
