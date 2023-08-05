@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, { useRef } from 'react';
 import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
 import getImage from '../../utils/getImage';
