@@ -104,7 +104,7 @@ export default function LoginForm () {
             Login
           </button>
           <div style={styleBottom}>
-            <p>Forgot <a href='#'>password?</a></p>
+            <p>Forgot <a href='/loginForm'>password?</a></p>
             <p><Link to="../loginForm/signup">Create account</Link></p>
 
           </div>
