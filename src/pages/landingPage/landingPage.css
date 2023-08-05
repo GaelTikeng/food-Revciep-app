@@ -1,0 +1,18 @@
+.food {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 78px 10px 10px 10px;
+  width: 97%;
+  justify-content: space-around;
+  padding: 20px 0;
+  gap: 15px;
+  box-shadow: 2px 4px 6px #0003;
+}
+
+.cover {
+  background-image: linear-gradient(115deg, #c9c3c56c, #ac9ea383), url('https://c8.alamy.com/compfr/2ke83x1/cuisine-authentique-du-cameroun-assiette-avec-drapeau-camerounais-et-coutellerie-2ke83x1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: fit-content;
+  background-attachment: fixed;
+}

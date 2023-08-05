@@ -1,0 +1,17 @@
+.signup-form {
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  box-shadow: 1px 3px 5px #333031;
+  background-color: #c9c3c5d3;
+  width: 400px;
+  line-height: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .signup-form {
+    width: 95%;
+  }
+}

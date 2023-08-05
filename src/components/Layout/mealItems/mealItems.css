@@ -1,0 +1,9 @@
+.meal-div {
+  border-radius: 8px;
+  width: 300px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 2px 4px 6px #0006;
+  background: #c9c3c5;
+  
+}
