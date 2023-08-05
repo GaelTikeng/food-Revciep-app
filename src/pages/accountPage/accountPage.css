@@ -1,0 +1,22 @@
+
+.add-food {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin: 0 auto;
+  box-shadow: 2px 4px 6px #000008;
+  line-height: 2rem;
+  border-radius: 8px;
+  padding: 10px;
+  gap: 1rem;
+  background: #c9c3c5;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .add-food {
+    width: 90%;
+    margin-top: 10px;
+  }
+}

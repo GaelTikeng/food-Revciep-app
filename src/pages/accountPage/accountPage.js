@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import SideMenu from '../../components/sideMenu/sideMenu';
 import { FoodContext } from '../../utils/context';
-
+import './accountPage.css';
 
 
 
@@ -57,14 +57,6 @@ export default function Account () {
     setLocalData(update)
   };
 
-  const mystyle = {
-    border: "1px solid #000",
-    padding: "10px",
-    border: "none",
-    borderRadius: "10px",
-    gap: "1rem"
-  }
-
   const convert2base64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -116,7 +108,7 @@ export default function Account () {
       </div>
       {showAddForm && (     
         
-        <form style={mystyle} className='flex  flex-col w-1/4 mx-auto shadow-xl leading-9 bg-gray-300' 
+        <form className='add-food' 
           onSubmit={handleSubmit}>
           <input
             type='text'
@@ -124,7 +116,7 @@ export default function Account () {
             value={productData.name}
             placeholder='Meal name'
             onChange={handleChange}
-            style={{border: "2px solid ", borderRadius:"5px"}}
+            style={{border: "2px solid ", borderRadius:"5px", padding: "5px"}}
           />
           <input
             type='number'
@@ -132,7 +124,7 @@ export default function Account () {
             value={productData.price}
             onChange={handleChange}
             name='price'           
-            style={{border: "2px solid ", borderRadius:"5px"}}
+            style={{border: "2px solid ", borderRadius:"5px", padding: "5px"}}
           />
           <textarea
             name='description'
@@ -141,7 +133,7 @@ export default function Account () {
             placeholder='Food description'
             cols="60"
             rows="3"
-            style={{border: "2px solid ", borderRadius:"5px"}}
+            style={{border: "2px solid ", borderRadius:"5px", padding: "5px"}}
           >
             Product description
           </textarea>

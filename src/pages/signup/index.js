@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
-import { FoodContext } from '../../utils/context';
+import './signup.css';
 
 
 const MyTextInput = ({ label, ...props }) => {
@@ -45,13 +44,6 @@ export default function SignupForm () {
     justifyContent:"space-around"
   }
 
-  const mystyle = {
-    border: "1px solid #000",
-    padding: "10px",
-    border: "none",
-    borderRadius: "10px"
-  }
-
   return (
     <div style={backgroundStyle}>
       <h1 className='text-3xl text-center mt-8' >Create account</h1>
@@ -87,16 +79,15 @@ export default function SignupForm () {
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
             localStorage.setItem("userInfo", JSON.stringify(values));
           }, 400);
           navigate('/loginForm/signup/accountPage')
         }}
       >
-        <Form style={mystyle} className='flex flex-col mx-auto shadow-xl leading-9 bg-gray-300'>
+        <Form className='signup-form'>
           <MyTextInput
-            // className="p-1"
+            className="p-1"
             label="First Name"
             name="firstName"
             type="text"
@@ -108,10 +99,11 @@ export default function SignupForm () {
             name="lastName"
             type="text"
             placeholder="Doe"
-            // className="p-1"
+            className="p-1"
           />
 
           <MyTextInput
+            className="p-1"
             label="Email Address"
             name="email"
             type="email"
@@ -119,12 +111,14 @@ export default function SignupForm () {
           />
 
           <MyTextInput
+            className="p-1"
             label="Password"
             name="password"
             type="password"
           />
 
           <MyTextInput
+            className="p-1"
             label="Confirm password"
             name="confirmPassword"
             type="password"

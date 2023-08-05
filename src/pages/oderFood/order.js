@@ -89,7 +89,7 @@ export default function OrderFood () {
           }}
         >
           
-          <Form style={mystyle} className='flex flex-col mx-auto shadow-xl leading-9 bg-gray-300'>
+          <Form style={mystyle} className='flex flex-col mx-auto shadow-xl leading-9 '>
             <MyTextInput
               className="p-1"
               label="Name"
